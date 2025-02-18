@@ -1,101 +1,73 @@
-import Image from "next/image";
+// app/page.tsx
+import Head from "next/head";
 
-export default function Home() {
+export const metadata = {
+  title: "Social Share Example - My NextJS App",
+  description:
+    "This page demonstrates how to set up OpenGraph and Twitter Card meta tags using the Head component in NextJS.",
+};
+
+export default function SocialSharePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <>
+      <Head>
+        {/* Basic Meta Tags */}
+        <title>Social Share Example - My NextJS App</title>
+        <meta
+          name="description"
+          content="Enhance your SEO with rich meta tags using NextJS's Head component."
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+        <meta
+          name="keywords"
+          content="NextJS, SEO, OpenGraph, Twitter Card, Web Development"
+        />
+        <meta name="robots" content="index, follow" />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+        {/* OpenGraph Meta Tags */}
+        <meta
+          property="og:title"
+          content="Social Share Example - My NextJS App"
+        />
+        <meta
+          property="og:description"
+          content="Learn how to enhance your website's SEO and social media previews with NextJS's OpenGraph meta tags."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.example.com/seo-share" />
+        <meta
+          property="og:image"
+          content="https://picsum.photos/1200/630?random=1"
+        />
+
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Social Share Example - My NextJS App"
+        />
+        <meta
+          name="twitter:description"
+          content="Experience enhanced social media sharing with rich previews using OpenGraph and Twitter Card meta tags."
+        />
+        <meta
+          name="twitter:image"
+          content="https://picsum.photos/1200/628?random=1"
+        />
+      </Head>
+      <main className="min-h-screen flex flex-col items-center justify-center p-8 bg-gray-50">
+        <h1 className="text-3xl font-bold text-gray-800">
+          Social Share Example
+        </h1>
+        <p className="mt-4 text-lg text-gray-600">
+          이 페이지는 Head 컴포넌트를 사용해 OpenGraph 및 Twitter Card meta
+          태그를 설정하는 방법을 보여줍니다.
+        </p>
+        <p className="mt-4 text-sm text-gray-500">
+          참고: 메타 태그는 페이지가 배포된 후에 적용됩니다. Facebook Sharing
+          Debugger나 Twitter Card Validator와 같은 도구를 사용하여 미리보기를
+          확인해 보세요.
+        </p>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </>
   );
 }
