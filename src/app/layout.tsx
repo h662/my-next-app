@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "My NextJS App - Minimal Design",
-  description: "A minimal and clean NextJS application with a simple layout.",
+  description: "A minimal and clean NextJS application with SEO optimization.",
 };
 
 export default function RootLayout({

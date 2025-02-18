@@ -34,10 +34,7 @@ export default function SocialSharePage() {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.example.com/seo-share" />
-        <meta
-          property="og:image"
-          content="https://picsum.photos/1200/630?random=1"
-        />
+        <meta property="og:image" content="/sample.jpg" />
 
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -49,10 +46,7 @@ export default function SocialSharePage() {
           name="twitter:description"
           content="Experience enhanced social media sharing with rich previews using OpenGraph and Twitter Card meta tags."
         />
-        <meta
-          name="twitter:image"
-          content="https://picsum.photos/1200/628?random=1"
-        />
+        <meta name="twitter:image" content="/sample.jpg" />
       </Head>
       <main className="min-h-screen flex flex-col items-center justify-center p-8 bg-gray-50">
         <h1 className="text-3xl font-bold text-gray-800">
@@ -63,10 +57,17 @@ export default function SocialSharePage() {
           태그를 설정하는 방법을 보여줍니다.
         </p>
         <p className="mt-4 text-sm text-gray-500">
-          참고: 메타 태그는 페이지가 배포된 후에 적용됩니다. Facebook Sharing
-          Debugger나 Twitter Card Validator와 같은 도구를 사용하여 미리보기를
-          확인해 보세요.
+          참고: 메타 태그는 페이지가 배포된 후에 적용됩니다. 페이지를 배포한 후,
+          Facebook Sharing Debugger나 Twitter Card Validator와 같은 도구로
+          미리보기를 확인하세요.
         </p>
+        <div className="mt-8">
+          <img
+            src="/sample.jpg"
+            alt="Sample Image for Social Sharing"
+            className="w-full max-w-md rounded-lg shadow-lg"
+          />
+        </div>
       </main>
     </>
   );
