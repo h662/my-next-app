@@ -1,7 +1,11 @@
 // app/seo-share/[id]/page.tsx
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
-  const { id } = params;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
   // 유효한 id는 "1", "2", "3", "4"입니다. 유효하지 않은 경우 "1"을 기본으로 사용합니다.
   const validIds = ["1", "2", "3", "4"];
   const image = validIds.includes(id) ? `/${id}.jpg` : `/1.jpg`;
@@ -35,12 +39,12 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   };
 }
 
-export default function SocialSharePage({
+export default async function SocialSharePage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const { id } = params;
+  const { id } = await params;
   const image = `/${id}.jpg`;
 
   return (
